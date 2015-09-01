@@ -37,35 +37,23 @@
     </head>
 
     <body>
-
         <div class="reveal">
-
             <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
+            <div class="slides" style="text-align: left !important;">
                 <section>
-                    <h1>Ленивые вычисления:</h1>
-                    <h3>плюсы и минусы</h3>
-                    <div class="meetup-mark">
-                        (<span class="src-code-type">RuHaskell.Meetup</span> <span class="src-code-number">2015</span> <span class="src-code-type">Summer</span>, <span class="src-code-function">fromGregorian</span> <span class="src-code-number">2015</span> <span class="src-code-number">06</span> <span class="src-code-number">21</span>)
-                    </div>
+                    <h1>Зачем нужен<br/>Haskell:</h1>
+                    <span style="font-size: 75px; color: #777;">ленивые вычисления</span>
                 </section>
 
                 <!-- Концептуальная цитата -->
 
                 <section>
                     <div class="intro-quote">
-                        <span style="color: #bbb;"><i class="fa fa-quote-right"></i></span>&nbsp;&nbsp;Лучше ничем не заниматься,<br/><span style="padding-left: 110px;"></span> чем заниматься ничем.
+                        <span style="color: #ccc;"><i class="fa fa-quote-right"></i></span>&nbsp;&nbsp;Лучше<br/>
+                        <span style="padding-left: 111px;">ничем не заниматься,</span><br/>
+                        <span style="padding-left: 113px;"></span> чем заниматься ничем.
                     </div>
-                    <div class="medium-text" style="color: #999 !important; text-align: left; padding-left: 190px;">Тацит</div>
-                </section>
-
-                <!-- Определяемся с понятиями... -->
-
-                <section data-background="#ff3c26" data-background-transition="zoom">
-                    <h2 class="part-conception-title">Qui est qui</h2>
-                    <div class="part-conception-mark">
-                        <i class="fa fa-question"></i>
-                    </div>
+                    <div class="medium-text" style="color: #777 !important; text-align: left; padding-left: 156px; font-size: 44px !important;">Тацит</div>
                 </section>
 
                 <section>
@@ -85,15 +73,7 @@
 
                 <section>
                     <pre><code class="haskell src-code" data-trim>
-"/home/dsh" &lt;/&gt; "meetup2015"
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">И это</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code" data-trim>
-head [15, 2, 6]
+"/home/dsh" &lt;/&gt; "rif2015"
                     </code></pre>
                     <div class="under-src-code-separator"></div>
                     <div class="big-text text-left">И это</div>
@@ -184,42 +164,22 @@ let sum = 5
                     <pre><code class="haskell src-code-small" data-trim>
 main :: IO ()
 main =
-    let stupid = 2 `div` 0
-    in print stupid
+  let stupid = 2 `div` 0
+  in print stupid
                     </code></pre>
                     <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Вполне ожидаемая ошибка</div>
+                    <div class="big-text text-left">Ожидаемая ошибка</div>
                 </section>
 
                 <section>
                     <pre><code class="haskell src-code-small" data-trim>
 main :: IO ()
 main =
-    let stupid = 2 `div` 0
-    in putStrLn "Just exit!"
+  let stupid = 2 `div` 0
+  in putStrLn "Bye!"
                     </code></pre>
                     <div class="under-src-code-separator"></div>
                     <div class="big-text text-left">Никакой ошибки</div>
-                </section>
-
-                <section>
-                    <h3><span class="lazy-color"><span class="small-thumbs"><i class="fa fa-bed"></i></span> № 2</span></h3>
-                    <div class="big-text">Спускаемся настолько,</br>насколько это нужно</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code src-code-small" data-trim>
-main :: IO ()
-main =
-    let some        = ( 2 `div` 0
-                      , [2 * 3, 4 `div` 0]
-                      )
-        (_, second) = some
-        [elem1, _]  = second
-    in print elem1
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Ленивый лифт</div>
                 </section>
 
                 <!-- Плюсы -->
@@ -240,8 +200,8 @@ main =
                     <pre><code class="haskell src-code src-code-small" data-trim>
 main :: IO ()
 main = do
-    file <- readFile "/home/dsh/big.log"
-    putStrLn $ take 100 file
+  log <- readFile "/tmp/log"
+  putStrLn $ take 100 log
                     </code></pre>
                     <div class="under-src-code-separator"></div>
                     <div class="big-text text-left">Читаем лишь то, что нужно</div>
@@ -321,55 +281,6 @@ main = do
                         <i class="fa fa-thumbs-o-down"></i>
                     </div>
                 </section>
-
-                <section>
-                    <h3><span class="minus-color"><span class="small-thumbs"><i class="fa fa-thumbs-o-down"></i></span> № 1</span></h3>
-                    <h3>Неожиданное поведение</h3>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code src-code-small" data-trim>
-import Data.String.Utils
-
-main :: IO ()
-main = do
-    file <- readFile path
-    writeFile path $ replace "," ";" file
-    where path = "/home/dsh/data"
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Ну-ну&hellip;</div>
-                </section>
-
-                <section>
-                    <pre><code class="bash src-code src-code-small" data-trim>
-openFile: resource busy (file is locked)
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Лень мешает</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code src-code-small" data-trim>
-import Data.String.Utils
-import qualified System.IO.Strict as S
-
-main :: IO ()
-main = do
-    file <- S.readFile path
-    writeFile path $ replace "," ";" file
-    where path = "/home/dsh/data"
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Строгость решает</div>
-                </section>
-
-                <section>
-                    <h3><span class="minus-color">Выход:</span></h3>
-                    <div class="big-text">Не игнорируйте слова<br/><span class="minus-color">strictly</span> и <span class="minus-color">lazily</span><br/>в документации</div>
-                </section>
-
-                <!-- Проблема номер 2 -->
 
                 <section>
                     <h3><span class="minus-color"><span class="small-thumbs"><i class="fa fa-thumbs-o-down"></i></span> № 2</span></h3>

@@ -1,26 +1,37 @@
+@font-face {
+    font-family: 'Tenor Sans';
+    src: url('../fonts/TenorSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('../fonts/SourceCodePro-Regular.ttf');
+}
+
 .reveal {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Tenor Sans', sans-serif;
     /* font-size: 36px; */
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Tenor Sans', sans-serif;
     font-weight: 700;
 }
 
 .reveal h1 {
     font-size: 3.4em;
     color: #ff3c26;
+    text-transform: none !important;
 }
 
 .reveal h3 {
     text-transform: none !important;
     font-weight: normal !important;
-    font-size: 50px !important;
+    font-size: 60px !important;
 }
 
 .meetup-mark {
-    font-family: 'Menlo', monospace !important;
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
     text-align: center !important;
     font-size: 65% !important;
     padding-top: 70px !important;
@@ -71,9 +82,10 @@
 }
 
 .reveal pre code {
-    font-size: 42px;
-    line-height: 110% !important;
-    font-family: 'Menlo', monospace !important;
+    font-size: 48px !important;
+    font-weight: 400 !important;
+    line-height: 120% !important;
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
     padding: 25px;
 }
 
@@ -83,14 +95,14 @@
 
 .src-code-big {
     font-size: 52px !important;
-    font-family: 'Menlo', monospace !important;
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
     padding-bottom: 30px !important;
 }
 
 .src-code-big-aligned {
     text-align: left !important;
     font-size: 42px !important;
-    font-family: 'Menlo', monospace !important;
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
     border: 1px solid #002b35 !important;
     border-radius: 5px !important;
     background-color: #002b35 !important;
@@ -117,7 +129,7 @@
 
 .my-site {
     font-size: 32px !important;
-    font-family: 'Menlo', monospace !important;
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
 }
 
 .reveal .navigate-up {
@@ -129,7 +141,7 @@
 }
 
 .reveal .controls {
-    /* display: none !important; */
+    display: none !important;
 }
 
 /*
@@ -154,16 +166,18 @@
 }
 
 .intro-quote {
+    color: #666 !important;
     text-align: left !important;
-    font-size: 90px !important;
-    padding-left: 80px !important;
-    padding-bottom: 30px !important;
-    font-family: 'Savoye LET', 'PT Sans', sans-serif !important;
+    font-size: 70px !important;
+    padding-left: 40px !important;
+    padding-bottom: 50px !important;
+    font-weight: 100 !important;
+    font-family: 'Tenor Sans', sans-serif !important;
 }
 
 .big-text {
     color: #586e75 !important;
-    font-size: 50px !important;
+    font-size: 60px !important;
 }
 
 .medium-text {
@@ -194,7 +208,7 @@
 }
 
 .thank-you-cap {
-    font-family: 'American Typewriter', 'PT Sans', sans-serif !important;
+    font-family: 'Tenor Sans', sans-serif !important;
     font-size: 60px !important;
     color: #aaa !important;
 }
@@ -243,7 +257,7 @@
     padding-right: 4px !important;
     padding-top: 2px !important;
     padding-bottom: 2px !important;
-    font-family: 'Menlo'. monospace !important;
+    font-family: 'Source Code Pro', 'Menlo'. monospace !important;
     color: #eee !important;
     font-size: 90% !important;
 }
@@ -259,4 +273,3 @@
     font-size: 150px !important;
     color: #aaa !important;
 }
-
