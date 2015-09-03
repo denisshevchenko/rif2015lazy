@@ -51,58 +51,36 @@
     padding-top: 25px !important;
 }
 
-.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
-    border-right-color: #F04F20;
-}
-
-.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
-    border-left-color: #F04F20;
-}
-
-.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
-    border-bottom-color: #F04F20;
-}
-
-.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
-    border-top-color: #F04F20;
-}
-
-.reveal .controls div.navigate-left.enabled:hover {
-    border-right-color: #FA7952;
-}
-
-.reveal .controls div.navigate-right.enabled:hover {
-    border-left-color: #FA7952;
-}
-
-.reveal .controls div.navigate-up.enabled:hover {
-    border-bottom-color: #FA7952;
-}
-
-.reveal .controls div.navigate-down.enabled:hover {
-    border-top-color: #FA7952;
-}
-
 .reveal .progress span {
     background: #F04F20;
 }
 
 .reveal pre code {
-    font-size: 48px !important;
+    font-size: 46px !important;
     font-weight: 400 !important;
     line-height: 120% !important;
     font-family: 'Source Code Pro', 'Menlo', monospace !important;
     padding: 25px;
+    border-radius: 7px !important;
 }
 
-.src-code-small {
-    font-size: 32px !important;
+.code-inline {
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
+}
+
+.reveal pre {
+    border-radius: 7px !important;
 }
 
 .src-code-big {
     font-size: 52px !important;
     font-family: 'Source Code Pro', 'Menlo', monospace !important;
     padding-bottom: 30px !important;
+}
+
+.src-code-small {
+    font-family: 'Source Code Pro', 'Menlo', monospace !important;
+    font-size: 12px !important;
 }
 
 .src-code-big-aligned {
@@ -115,22 +93,6 @@
     padding: 20px !important;
     color: #11a198 !important;
     /* padding-bottom: 30px !important; */
-}
-
-.src-code-keyword {
-    color: #d53584 !important;
-}
-
-.src-code-number {
-    color: #29a199 !important;
-}
-
-.src-code-type {
-    color: #a58f2a !important;
-}
-
-.src-code-function {
-    color: #2590d8 !important;
 }
 
 .my-site {
@@ -250,6 +212,10 @@
     padding-left: 44px !important;
 }
 
+.text-right {
+    text-align: right !important;
+}
+
 .start-tip {
     font-size: 20px !important;
     text-align: center !important;
@@ -286,6 +252,6 @@
 }
 
 .num-light {
-    font-size: 80% !important;
+    font-size: 140% !important;
     color: #90AFC5 !important;
 }

@@ -103,6 +103,17 @@
                     </div>
                 </section>
 
+                <section>
+                    <div style="text-align: center;">
+                        <span class="big-text"><span class="red-text">Жадное</span> вычисление</span>
+                    </div>
+                    <div class="lambda-code">
+                        <div style="padding-top: 40px;"></div>
+                        <span style="color: #ccc;">(&lambda;x.x + 1)</span><br/>
+                        &nbsp;&rArr;&nbsp;&nbsp;<strong>6</strong> + 1
+                    </div>
+                </section>
+
                 <!-- Ленивый подход -->
 
                 <section>
@@ -115,7 +126,18 @@
                     <div class="lambda-code">
                         <div style="padding-top: 117px;"></div>
                         <span style="color: #ccc;">(&lambda;x.x + 1)</span><br/>
-                        &nbsp;&rArr;&nbsp;&nbsp;<strong>(2 * 3)</strong> + 1
+                        &nbsp;&rArr;&nbsp;&nbsp;(<strong>2 * 3</strong>) + 1
+                    </div>
+                </section>
+
+                <section>
+                    <div style="text-align: center;">
+                        <span class="big-text"><span class="red-text">Ленивое</span> вычисление</span>
+                    </div>
+                    <div class="lambda-code">
+                        <div style="padding-top: 40px;"></div>
+                        <span style="color: #ccc;">(&lambda;x.x + 1)</span><br/>
+                        &nbsp;&rArr;&nbsp;&nbsp;(<strong>2 * 3</strong>) + 1
                     </div>
                 </section>
 
@@ -125,150 +147,117 @@
                     <h2 class="part-conception-title">Принципы</h2>
                 </section>
 
-                <section data-background="#336B87">
-                    <h3 class="part-conception-title"><span class="num-light">№1</span> Как можно позже</h3>
-                </section>
+                <!-- Как можно позже -->
 
                 <section data-background="#336B87">
-                    <h3 class="part-conception-title"><span class="num-light">№2</span> Как можно меньше</h3>
-                </section>
-
-
-
-
-                <section>
-                    <h3>Haskell-программа &mdash;</h3>
-                    <div class="big-text">совокупность <span class="red-text">выражений</span></div>
-                    <div class="english-separator"></div>
-                    <div class="fragment big-text">/<span class="small-text">англ.</span> <span class="red-text">expression</span>/</div>
+                    <h3 class="part-conception-title"><span class="num-light">1</span> Как можно позже</h3>
                 </section>
 
                 <section>
-                    <pre><code class="haskell src-code" data-trim>
-12.3 - 1.09
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Это выражение</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code" data-trim>
-"/home/dsh" &lt;/&gt; "rif2015"
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">И это</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code" data-trim>
-9
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">И даже это!</div>
-                </section>
-
-                <section>
-                    <h3>Запуск Haskell-программы &mdash;</h3>
-                    <div class="big-text">начало <span class="red-text">вычисления</span> её выражений</div>
-                    <div class="english-separator"></div>
-                    <div class="fragment big-text">/<span class="small-text">англ.</span> <span class="red-text">evaluation</span>/</div>
-                </section>
-
-                <section>
-                    <h3>Вычислить выражение &mdash;</h3>
-                    <div class="big-text">значит <span class="red-text">сократить</span> его</div>
-                    <div class="english-separator"></div>
-                    <div class="fragment big-text">/<span class="small-text">англ.</span> <span class="red-text">reduce</span>/</div>
-                </section>
-
-                <section>
-                    <h3>В основе сокращения &mdash;</h3>
-                    <div class="big-text"><span class="red-text">применение функции</span></div>
-                    <div class="english-separator"></div>
-                    <div class="fragment big-text">/<span class="small-text">англ.</span> <span class="red-text">function application</span>/</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code" data-trim>
-let sum = 2 + 3
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Можно сократить</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code" data-trim>
-let sum = (+) 2 3
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Сокращаем&hellip;</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code" data-trim>
-let sum = 5
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Готово</div>
-                </section>
-
-                <section>
-                    <h3>Если сократить нельзя &mdash;</h3>
-                    <div class="big-text">выражение в <span class="red-text">нормальной форме</span></div>
-                    <div class="english-separator"></div>
-                    <div class="fragment big-text">/<span class="small-text">англ.</span> <span class="red-text">normal form</span>/</div>
-                </section>
-
-                <section>
-                    <h3>Если сократить можно &mdash;</h3>
-                    <div class="big-text">выражение называют <span class="red-text">сокращаемым</span></div>
-                    <div class="english-separator"></div>
-                    <div class="fragment big-text">/<span class="small-text">англ.</span> <span class="red-text">reducible expression</span> <span class="small-text">или</span> <span class="red-text">redex</span>/</div>
-                </section>
-
-                <!-- Принципы лени -->
-
-                <section data-background="#53777A" data-background-transition="zoom">
-                    <h2 class="part-conception-title">Принципы лени</h2>
-                    <div class="part-conception-mark">
-                        <i class="fa fa-bed"></i>
-                    </div>
-                </section>
-
-                <section>
-                    <h3><span class="lazy-color"><span class="small-thumbs"><i class="fa fa-bed"></i></span> № 1</span></h3>
-                    <div class="big-text">Выражение не сокращается,</br>пока в этом нет необходимости</div>
-                </section>
-
-                <section>
-                    <pre><code class="haskell src-code-small" data-trim>
+                    <pre><code class="haskell" data-trim>
 main :: IO ()
 main =
-  let stupid = 2 `div` 0
-  in print stupid
+  let result = 2 `div` 0
+  in print result
                     </code></pre>
                     <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Ожидаемая ошибка</div>
+                    <div class="big-text text-left">Ошибка</div>
                 </section>
 
                 <section>
-                    <pre><code class="haskell src-code-small" data-trim>
+                    <pre><code class="haskell" data-trim>
 main :: IO ()
 main =
-  let stupid = 2 `div` 0
+  let result = 2 `div` 0
   in putStrLn "Bye!"
                     </code></pre>
                     <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Никакой ошибки</div>
+                    <div class="big-text text-left">Нет ошибки</div>
                 </section>
+
+                <!-- Как можно меньше -->
+
+                <section data-background="#336B87">
+                    <h3 class="part-conception-title"><span class="num-light">2</span> Как можно меньше</h3>
+                </section>
+
+                <section>
+                    <pre><code class="haskell" data-trim>
+main :: IO ()
+main =
+  let cx     = 2 / 6.054
+      nk     = 4 * 12.003
+      coeffs = [cx, nk]
+  in putStrLn "Nothing..."
+                    </code></pre>
+                    <div class="under-src-code-separator"></div>
+                    <div class="big-text text-left" style="float: left;">Ничего</div>
+                    <div class="fragment">
+                        <div class="big-text text-right red-text" style="padding-right: 45px;">
+                            Thunk
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <pre><code class="haskell" data-trim>
+main :: IO ()
+main =
+  let cx     = 2 / 6.054
+      nk     = 4 * 12.003
+      coeffs = [cx, nk]
+  in print $ length coeffs
+                    </code></pre>
+                    <div class="under-src-code-separator"></div>
+                    <div class="big-text text-left" style="float: left;">Только длина</div>
+                    <div class="fragment">
+                        <div class="big-text text-right red-text" style="padding-right: 45px;">
+                            WHNF
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <pre><code class="haskell" data-trim>
+main :: IO ()
+main =
+  let cx     = 2 / 6.054
+      nk     = 4 * 12.003
+      coeffs = [cx, nk]
+  in print $ coeffs !! 1
+                    </code></pre>
+                    <div class="under-src-code-separator"></div>
+                    <div class="big-text text-left" style="float: left;">Только второй</div>
+                    <div class="fragment">
+                        <div class="big-text text-right red-text" style="padding-right: 45px;">
+                            WHNF
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <pre><code class="haskell" data-trim>
+main :: IO ()
+main =
+  let cx     = 2 / 6.054
+      nk     = 4 * 12.003
+      coeffs = [cx, nk]
+  in print coeffs
+                    </code></pre>
+                    <div class="under-src-code-separator"></div>
+                    <div class="big-text text-left" style="float: left;">Всё</div>
+                    <div class="fragment">
+                        <div class="big-text text-right red-text" style="padding-right: 45px;">
+                            Normal form
+                        </div>
+                    </div>
+                </section>
+
 
                 <!-- Плюсы -->
 
-                <section data-background="#CC333F" data-background-transition="zoom">
-                    <h2 class="part-conception-title">Плюсы</h2>
-                    <div class="part-conception-mark">
-                        <i class="fa fa-thumbs-o-up"></i>
-                    </div>
+                <section data-background="#336B87">
+                    <h2 class="part-conception-title">Ну и что?</h2>
                 </section>
 
                 <section>
@@ -321,36 +310,30 @@ main =
                     <div class="big-text text-left">&hellip; так и бесконечного</div>
                 </section>
 
-                <section>
-                    <h3><span class="plus-color"><span class="small-thumbs"><i class="fa fa-thumbs-o-up"></i></span> № 3</span></h3>
-                    <h3>DSL</h3>
+                <section data-background="#336B87">
+                    <h3 class="part-conception-title"><span class="num-light">3</span> DSL</h3>
                 </section>
 
                 <section>
                     <pre><code class="haskell src-code src-code-small" data-trim>
-selectBy :: Bool -> (a, a) -> a
-selectBy True  (f, _) = f
-selectBy False (_, s) = s
+(?) :: Bool -> (a, a) -> a
+True  ? (f, _) = f
+False ? (_, s) = s
                     </code></pre>
                     <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Замена условной конструкции</div>
+                    <div class="big-text text-left">Замена <strong><span class="code-inline">if</span></strong></div>
                 </section>
 
                 <section>
-                    <pre><code class="haskell src-code src-code-small" data-trim>
-import System.Exit
-
+                    <pre><code class="haskell src-code-small" data-trim>
 main :: IO ()
 main = do
-    putStrLn "Input web prefix:"
-    prefix <- getLine
-    selectBy (prefix == "https")
-             ( putStrLn "secure web :)"
-             , exitWith $ ExitFailure 1
-             )
+  putStrLn "Input prefix:"
+  prefix <- getLine
+  (prefix == "https") ?
+    (putStrLn "Secure web!",
+     exitFailure)
                     </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">И это честная замена!</div>
                 </section>
 
                 <!-- Минусы -->
