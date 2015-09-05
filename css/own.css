@@ -96,7 +96,7 @@
 }
 
 .my-site {
-    font-size: 32px !important;
+    font-size: 52px !important;
     font-family: 'Source Code Pro', 'Menlo', monospace !important;
 }
 
@@ -149,12 +149,12 @@
 }
 
 .medium-text {
-    color: #4F5F64 !important;
-    font-size: 38px !important;
+    color: #586e75 !important;
+    font-size: 48px !important;
 }
 
 .small-text {
-    color: #4F5F64 !important;
+    color: #586e75 !important;
     font-size: 30px !important;
 }
 
@@ -254,4 +254,52 @@
 .num-light {
     font-size: 140% !important;
     color: #90AFC5 !important;
+}
+
+.final-section-principles {
+    float: left !important;
+    padding-bottom: 70px !important;
+    padding-right: 121px !important;
+}
+
+.final-section-advantages {
+    float: left !important;
+    padding-bottom: 70px !important;
+    padding-right: 130px !important;
+}
+
+.final-section-disadvantages {
+    float: left !important;
+    padding-bottom: 70px !important;
+    padding-right: 130px !important;
+}
+
+.final-section-principles-picture {
+    font-size: 70px !important;
+    color: #336B87 !important;
+    opacity: 0.7 !important;
+}
+
+.final-section-advantages-picture {
+    font-size: 70px !important;
+    color: #277873 !important;
+    opacity: 0.7 !important;
+}
+
+.final-section-disadvantages-picture {
+    font-size: 70px !important;
+    color: #A43820 !important;
+    opacity: 0.7 !important;
+}
+
+.final-section-principles-text {
+    color: #336B87 !important;
+}
+
+.final-section-advantages-text {
+    color: #277873 !important;
+}
+
+.final-section-disadvantages-text {
+    color: #A43820 !important;
 }
