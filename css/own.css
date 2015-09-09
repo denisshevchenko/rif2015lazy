@@ -20,14 +20,14 @@
 
 .reveal h1 {
     font-size: 3.4em;
-    color: #ff3c26;
+    /* color: #ff3c26; */
     text-transform: none !important;
 }
 
 .reveal h2 {
     text-transform: none !important;
     font-weight: normal !important;
-    font-size: 100px !important;
+    font-size: 110px !important;
 }
 
 .reveal h3 {
@@ -134,7 +134,7 @@
 }
 
 .intro-quote {
-    color: #666 !important;
+    color: #677 !important;
     text-align: left !important;
     font-size: 70px !important;
     padding-left: 40px !important;
@@ -143,14 +143,19 @@
     font-family: 'Tenor Sans', sans-serif !important;
 }
 
+.bigger-text {
+    color: #586e75 !important;
+    font-size: 72px !important;
+}
+
 .big-text {
     color: #586e75 !important;
-    font-size: 60px !important;
+    font-size: 65px !important;
 }
 
 .medium-text {
     color: #586e75 !important;
-    font-size: 48px !important;
+    font-size: 52px !important;
 }
 
 .small-text {
@@ -183,11 +188,12 @@
 
 .stat-clock-icon {
     color: #aaa !important;
-    padding-right: 14px !important;
+    padding-right: 26px !important;
 }
 
 .stat-memory-icon {
     color: #aaa !important;
+    padding-right: 8px !important;
 }
 
 .stat-wrapper {
@@ -252,14 +258,22 @@
 }
 
 .num-light {
-    font-size: 140% !important;
+    float: left !important;
+    font-size: 250% !important;
     color: #90AFC5 !important;
+    opacity: 0.4 !important;
+    padding-right: 45px !important;
+    padding-top: 79px !important;
+}
+
+.num-text {
+    padding-top: 110px !important;
 }
 
 .final-section-principles {
     float: left !important;
     padding-bottom: 70px !important;
-    padding-right: 121px !important;
+    padding-right: 125px !important;
 }
 
 .final-section-advantages {
@@ -271,25 +285,22 @@
 .final-section-disadvantages {
     float: left !important;
     padding-bottom: 70px !important;
-    padding-right: 130px !important;
+    padding-right: 131px !important;
 }
 
 .final-section-principles-picture {
-    font-size: 70px !important;
+    font-size: 80px !important;
     color: #336B87 !important;
-    opacity: 0.7 !important;
 }
 
 .final-section-advantages-picture {
-    font-size: 70px !important;
+    font-size: 80px !important;
     color: #277873 !important;
-    opacity: 0.7 !important;
 }
 
 .final-section-disadvantages-picture {
-    font-size: 70px !important;
+    font-size: 80px !important;
     color: #A43820 !important;
-    opacity: 0.7 !important;
 }
 
 .final-section-principles-text {
@@ -301,5 +312,6 @@
 }
 
 .final-section-disadvantages-text {
+    padding-top: 5px !important;
     color: #A43820 !important;
 }
