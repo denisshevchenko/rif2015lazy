@@ -191,12 +191,12 @@
 }
 
 .stat-clock-icon {
-    color: #aaa !important;
+    color: #888 !important;
     padding-right: 26px !important;
 }
 
 .stat-memory-icon {
-    color: #aaa !important;
+    color: #888 !important;
     padding-right: 8px !important;
 }
 
@@ -288,13 +288,13 @@
 .final-section-advantages {
     float: left !important;
     padding-bottom: 70px !important;
-    padding-right: 130px !important;
+    padding-right: 142px !important;
 }
 
 .final-section-disadvantages {
     float: left !important;
     padding-bottom: 70px !important;
-    padding-right: 131px !important;
+    padding-right: 143px !important;
 }
 
 .final-section-principles-picture {
