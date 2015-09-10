@@ -96,8 +96,8 @@
 }
 
 .my-site {
-    font-size: 52px !important;
-    font-family: 'Source Code Pro', 'Menlo', monospace !important;
+    font-size: 42px !important;
+    padding-left: 13px !important;
 }
 
 .reveal .navigate-up {
@@ -165,6 +165,10 @@
 
 .red-text {
     color: #ff2634 !important;
+}
+
+.green-text {
+    color: #277873 !important;
 }
 
 .small-thumbs {
@@ -257,6 +261,11 @@
     font-family: 'Source Code Pro', monospace !important;
 }
 
+.big-lambda-code {
+    font-size: 120px !important;
+    font-family: 'Source Code Pro', monospace !important;
+}
+
 .num-light {
     float: left !important;
     font-size: 250% !important;
@@ -314,4 +323,9 @@
 .final-section-disadvantages-text {
     padding-top: 5px !important;
     color: #A43820 !important;
+}
+
+.mono-opt {
+    font-size: 70px !important;
+    font-family: 'Source Code Pro', monospace !important;
 }

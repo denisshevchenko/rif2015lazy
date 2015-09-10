@@ -62,6 +62,10 @@
                     <h2 class="part-conception-title">В начале было&#8230;</h2>
                 </section>
 
+                <section data-background="#336B87">
+                    <h2 class="part-conception-title">&lambda;-исчисление</h2>
+                </section>
+
                 <section>
                     <div class="lambda-code">
                         &nbsp;&lambda;x.x + 1
@@ -255,7 +259,7 @@ main =
                 </section>
 
                 <section data-background="#336B87">
-                    <h2 class="part-conception-title">Зачем всё это?</h2>
+                    <h2 class="part-conception-title">Ну и что?</h2>
                 </section>
 
                 <!-- Плюсы -->
@@ -365,7 +369,7 @@ bad []     c = c
 bad (_:xs) c = bad xs $ c + 1
                     </code></pre>
                     <div class="under-src-code-separator"></div>
-                    <div class="big-text text-left">Проблема&#8230;</div>
+                    <div class="big-text text-left">Проблема</div>
                 </section>
 
                 <section>
@@ -411,15 +415,60 @@ bad 1:2:3:[] ((0 + 1) + 1) + 1
                 <section>
                     <pre><code class="haskell src-code-small" data-trim>
 main =
-  let r = bad [1..50000000] 0
-  in print r
+  print $ bad [1..50000000] 0
                     </code></pre>
                     <div class="under-src-code-separator"></div>
                     <div class="under-src-code-separator"></div>
                     <div class="stat-wrapper">
-                        <span class="fragment big-text"><span class="stat-clock-icon"><i class="fa fa-clock-o"></i></span> Время<span style="padding-right: 81px;"></span><span class="red-text">62 с</span></span>
+                        <span class="fragment big-text"><span class="stat-clock-icon"><i class="fa fa-clock-o"></i></span> <span style="padding-right: 41px;"></span><span class="red-text">63 с</span></span>
+
                     <div class="english-separator"></div>
-                    <span class="fragment big-text"><span class="stat-memory-icon"><i class="fa fa-area-chart"></i></span> Память<span style="padding-right: 40px;"></span><span class="red-text">6.1 ГБ</span></span>
+
+                    <span class="fragment big-text"><span class="stat-memory-icon"><i class="fa fa-area-chart"></i></span> <span style="padding-right: 40px;"></span><span class="red-text">6.4 ГБ</span></span>
+                </section>
+
+                <!-- Что делать? -->
+
+                <section data-background="#336B87">
+                    <h2 class="part-conception-title">Что делать?</h2>
+                </section>
+
+                <section data-background="#336B87">
+                    <h3 class="part-conception-title">
+                        <div class="num-light">1</div>
+                        <div class="num-text">Оптимизация</div>
+                     </h3>
+                </section>
+
+                <section class="big-text">
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th><span class="mono-opt">-O0</span></th>
+								<th><span class="mono-opt">-O2</span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span class="stat-clock-icon"><i class="fa fa-clock-o"></i></span></td>
+								<td><span class="red-text">63 c</span></td>
+								<td><span class="green-text">3.2 с</span></td>
+							<tr>
+							<tr>
+								<td><span class="stat-clock-icon"><i class="fa fa-area-chart"></i></span></td>
+								<td><span class="red-text">6.4 ГБ</span></td>
+								<td><span class="green-text">104 кБ</span></td>
+							<tr>
+						</tbody>
+					</table>
+				</section>
+
+                <section data-background="#336B87">
+                    <h3 class="part-conception-title">
+                        <div class="num-light">2</div>
+                        <div class="num-text">Ручками</div>
+                     </h3>
                 </section>
 
                 <section>
@@ -432,18 +481,28 @@ ok (_:xs) c = ok xs $! c + 1
                     <div class="big-text text-left">Всё в порядке</div>
                 </section>
 
-                <section>
-                    <pre><code class="haskell src-code-small" data-trim>
-main =
-  let r = ok [1..50000000] 0
-  in print r
-                    </code></pre>
-                    <div class="under-src-code-separator"></div>
-                    <div class="under-src-code-separator"></div>
-                    <div class="stat-wrapper">
-                        <span class="fragment big-text"><span class="stat-clock-icon"><i class="fa fa-clock-o"></i></span> Время<span style="padding-right: 81px;"></span><span class="red-text">3.9 с</span></span>
-                    <div class="english-separator"></div>
-                    <span class="fragment big-text"><span class="stat-memory-icon"><i class="fa fa-area-chart"></i></span> Память<span style="padding-right: 40px;"></span><span class="red-text">мизерная</span></span>
+                <section class="big-text">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Лениво</th>
+                                <th>Строго</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="stat-clock-icon"><i class="fa fa-clock-o"></i></span></td>
+                                <td><span class="red-text">63 c</span></td>
+                                <td><span class="green-text">5.8 с</span></td>
+                            <tr>
+                            <tr>
+                                <td><span class="stat-clock-icon"><i class="fa fa-area-chart"></i></span></td>
+                                <td><span class="red-text">6.4 ГБ</span></td>
+                                <td><span class="green-text">182 кБ</span></td>
+                            <tr>
+                        </tbody>
+                    </table>
                 </section>
 
                 <!-- Итоги -->
@@ -493,7 +552,9 @@ main =
 
                     <div style="padding-top: 50px;"></div>
 
-                    <div class="medium-text" style="color: #dedede !important; padding-left: 13px;">Денис Шевченко</div>
+                    <div class="medium-text" style="color: #dedede !important; padding-left: 13px;">
+                        Денис Шевченко &#149; <a href="http://dshevchenko.biz" style="color: #90AFC5;"> dshevchenko.biz</a>
+                    </div>
                 </section>
 
             </div>
