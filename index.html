@@ -318,7 +318,7 @@ False ? (_, s) = s
                 <section>
                     <pre><code class="haskell src-code-small" data-trim>
 main = do
-  putStr "Input prefix: "
+  putStr "Input URL prefix: "
   prefix <- getLine
   (prefix == "https") ?
     (putStr "Secure web!",
